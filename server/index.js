@@ -71,7 +71,7 @@ const httpServer = http.createServer(app)
 
 io = require('socket.io')(httpServer, {
 	cors: {
-		origin: process.env.REACT_APP_CLIENT_HOST
+		origin: process.env.CLIENT_HOST
 	}
 })
 

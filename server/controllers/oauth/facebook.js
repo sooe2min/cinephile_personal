@@ -44,17 +44,17 @@ module.exports = {
 				if (user[1]) {
 					res.cookie('token', ACCESS_TOKEN)
 					res.cookie('oauth_id', user[0].id)
-					res.status(200).redirect(process.env.REACT_APP_CLIENT_HOST)
+					res.status(200).redirect(process.env.CLIENT_HOST)
 				} else {
 					res.cookie('token', ACCESS_TOKEN)
 					res.cookie('user', user[0].id)
-					res.status(200).redirect(process.env.REACT_APP_CLIENT_HOST)
+					res.status(200).redirect(process.env.CLIENT_HOST)
 				}
 			})
 			.catch(err => console.log(err))
 	},
 
 	unlink: async (req, res) => {
-		res.status(200).redirect(process.env.REACT_APP_CLIENT_HOST)
+		res.status(200).redirect(process.env.CLIENT_HOST)
 	}
 }
