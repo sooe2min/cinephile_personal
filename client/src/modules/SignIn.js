@@ -30,14 +30,17 @@ export const loginPasswordAction = loginPassword => ({
 const signInPost = async signInInfo => {
 	if (Array.isArray(signInInfo)) {
 		return await axios.post(
-			`http://localhost:3000/`,
+			`${process.env.REACT_APP_SERVER_HOST}/`,
 			Object.assign({}, { user: signInInfo[1] })
 		)
 	}
-	return await axios.post(`http://localhost:3000/users/login`, signInInfo)
+	return await axios.post(
+		`${process.env.REACT_APP_SERVER_HOST}/users/login`,
+		signInInfo
+	)
 }
 const signOutPost = async () =>
-	await axios.post(`http://localhost:3000/users/logout`)
+	await axios.post(`${process.env.REACT_APP_SERVER_HOST}/users/logout`)
 
 export const signInAjaxAction = signInInfo => dispatch => {
 	dispatch({ type: SIGNIN_POST_PENDING })

@@ -17,7 +17,9 @@ const CONTENTS_GET_FAILURE = 'CONTENTS_GET_FAILURE'
 
 const contentsGet = async boardNo =>
 	boardNo &&
-	(await axios.get(`http://localhost:3000/board/article/${boardNo}`))
+	(await axios.get(
+		`${process.env.REACT_APP_SERVER_HOST}/board/article/${boardNo}`
+	))
 
 // 액션 생성자
 

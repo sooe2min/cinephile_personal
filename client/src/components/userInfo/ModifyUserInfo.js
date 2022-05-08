@@ -31,8 +31,8 @@ const modifyUserInfoFunc = ({
 		autoCookieLogin(JSON.parse(sessionStorage.getItem('userInfo')))
 	}, [autoCookieLogin])
 	//모두 포스트로 보낼 것
-	//http://localhost:3000/setting/check 이메일하고 닉네임만 중복 검사
-	//http://localhost:3000/setting/password id:유저 id, password:현재 패스워드, newpassword:새로운 패스워드 보낼 것.
+	//${process.env.REACT_APP_SERVER_HOST}/setting/check 이메일하고 닉네임만 중복 검사
+	//${process.env.REACT_APP_SERVER_HOST}/setting/password id:유저 id, password:현재 패스워드, newpassword:새로운 패스워드 보낼 것.
 
 	//일반 가입자들이 성별하고 나이 바꿀 수 없게 만들기
 	// 소셜 로그인

@@ -29,7 +29,7 @@ const option =
 
 // server
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 
 // client
 app.use(express.static('public'))
@@ -71,7 +71,7 @@ const httpServer = http.createServer(app)
 
 io = require('socket.io')(httpServer, {
 	cors: {
-		origin: 'http://localhost:3001'
+		origin: process.env.REACT_APP_CLIENT_HOST
 	}
 })
 

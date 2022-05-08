@@ -55,12 +55,12 @@ export function defalutUserInfoAction(modifyUserInfo) {
 const modifyUserInfoPost = async userInfo => {
 	if (Array.isArray(userInfo)) {
 		return await axios.post(
-			`http://localhost:3000/setting/userinfo`,
+			`${process.env.REACT_APP_SERVER_HOST}/setting/userinfo`,
 			userInfo[0]
 		)
 	} else {
 		return await axios.post(
-			`http://localhost:3000/setting/userinfo`,
+			`${process.env.REACT_APP_SERVER_HOST}/setting/userinfo`,
 			userInfo
 		)
 	}

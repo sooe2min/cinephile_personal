@@ -55,7 +55,7 @@ const comment = ({
 	const cmmtSubmitHandler = e => {
 		e.preventDefault()
 		axios
-			.post(`http://localhost:3000/board/comment`, {
+			.post(`${process.env.REACT_APP_SERVER_HOST}/board/comment`, {
 				text: comment,
 				user: userInfo.id,
 				article: contentsList.id
@@ -68,7 +68,7 @@ const comment = ({
 
 	const likeClickHandler = commentId => {
 		axios
-			.post(`http://localhost:3000/board/like`, {
+			.post(`${process.env.REACT_APP_SERVER_HOST}/board/like`, {
 				user: userInfo.id,
 				comment: commentId
 			})

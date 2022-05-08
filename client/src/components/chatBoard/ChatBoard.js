@@ -9,7 +9,7 @@ const ChatBoard = ({ userInfo, chatToggleSwitch, history }) => {
 	const [value, setValue] = useState('')
 	const botRef = useRef(null)
 
-	const socketURL = 'http://localhost:3000'
+	const socketURL = `${process.env.REACT_APP_SERVER_HOST}`
 
 	// eslint-disable-next-line
 	useEffect(() => {

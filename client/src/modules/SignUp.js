@@ -35,7 +35,10 @@ export const signUpAgeAction = signUpAge => ({
 	signUpAge
 })
 const signUpPost = async signUpInfo =>
-	await axios.post(`http://localhost:3000/users/signup`, signUpInfo)
+	await axios.post(
+		`${process.env.REACT_APP_SERVER_HOST}/users/signup`,
+		signUpInfo
+	)
 
 //action function
 export const signUpAjaxAction = signUpInfo => dispatch => {

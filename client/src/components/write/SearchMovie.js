@@ -22,7 +22,7 @@ const SearchMovie = ({ userInfo, history }) => {
 		setKeyword('')
 
 		const res = await axios.get(
-			`http://localhost:3000/board/movies/${keyword}`,
+			`${process.env.REACT_APP_SERVER_HOST}/board/movies/${keyword}`,
 			{}
 		)
 

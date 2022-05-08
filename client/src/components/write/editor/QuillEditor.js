@@ -140,7 +140,11 @@ class QuillEditor extends React.Component {
 			formData.append('img', file)
 
 			axios
-				.post('http://localhost:3000/setting/upload', formData, config)
+				.post(
+					`${process.env.REACT_APP_SERVER_HOST}/setting/upload`,
+					formData,
+					config
+				)
 				.then(response => {
 					// ressponse 에 이미지 주소 들어옴
 					// 아래 if(안에 여기) res 에 맞춰서 변경해야 함
