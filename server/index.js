@@ -15,17 +15,17 @@ const usersRouter = require('./routes/users')
 const settingRouter = require('./routes/setting')
 
 // https options
-const option =
-	process.env.NODE_ENV === 'production'
-		? {
-				key: fs.readFileSync(
-					'/etc/letsencrypt/live/cinephile.tk/privkey.pem'
-				),
-				cert: fs.readFileSync(
-					'/etc/letsencrypt/live/cinephile.tk/fullchain.pem'
-				)
-		  }
-		: undefined
+const option = undefined
+// process.env.NODE_ENV === 'production'
+// 	? {
+// 			key: fs.readFileSync(
+// 				'/etc/letsencrypt/live/cinephile.tk/privkey.pem'
+// 			),
+// 			cert: fs.readFileSync(
+// 				'/etc/letsencrypt/live/cinephile.tk/fullchain.pem'
+// 			)
+// 	  }
+// 	: undefined
 
 // server
 const app = express()
