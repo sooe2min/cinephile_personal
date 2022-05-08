@@ -27,6 +27,10 @@ const option = undefined
 // 	  }
 // 	: undefined
 
+//db
+const sequelize = require('./models/index').sequelize
+sequelize.sync()
+
 // server
 const app = express()
 const PORT = process.env.PORT || 8080
