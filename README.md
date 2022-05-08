@@ -1,6 +1,7 @@
 ## cinephile_personal
 
-- 팀 프로젝트 이후 개인적인 탐구를 위한 저장소입니다.
+팀 프로젝트 이후 개인적인 탐구를 위한 저장소입니다.
+
 - 기존 서버 저장소: https://github.com/codestates/cinephile_client.git
 - 기존 클라이언트 저장소: https://github.com/codestates/cinephile_server.git
 
