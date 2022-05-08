@@ -53,9 +53,9 @@ app.use(
 		resave: false,
 		saveUninitialized: false,
 		cookie: {
-			httpOnly: false,
-			sameSite: 'none', // only secure
-			secure: false // HTTPS
+			httpOnly: false
+			// sameSite: 'none', // only secure
+			// secure: true // HTTPS
 		}
 	})
 )
@@ -78,9 +78,7 @@ io = require('socket.io')(httpServer, {
 // 소켓
 io.on('connection', function (socket) {
 	socket.on('send message', function (name, msg) {
-		console.log('socket.id = ', socket.id)
-		socket.removeAllListeners()
-		console.log('리스너 제거됨')
+		socket.emit('receive message', name, msg)
 		socket.broadcast.emit('receive message', name, msg)
 	})
 	socket.on('disconnect', function (name) {

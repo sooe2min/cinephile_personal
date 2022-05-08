@@ -4,10 +4,11 @@
 	right: 0.5rem;
 	height: 65vh;
 	width: 25vw;
-	/* display: flex; */
+	flex-direction: column;
 	border: 2px solid rgb(118, 118, 118);
 	border-radius: 5px;
 	background-color: rgb(223, 223, 223);
+	padding-bottom: 50px;
 }
 .chat__form {
 	position: absolute;
@@ -74,13 +75,13 @@
 	padding: 0 10px;
 	/* box-sizing: border-box; */
 	/* flex: 5; */
-	overflow: auto;
+	overflow-y: scroll;
 }
 
-/* .message {
-    min-height: 40px;
-    margin: 5px 0;
-  } */
+.message {
+	min-height: 40px;
+	margin: 5px 0;
+}
 .message > .username {
 	margin: 2px 0 3px 0;
 	font-size: 1.1rem;
