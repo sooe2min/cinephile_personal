@@ -55,11 +55,17 @@ const comment = ({
 	const cmmtSubmitHandler = e => {
 		e.preventDefault()
 		axios
-			.post(`${process.env.REACT_APP_SERVER_HOST}/board/comment`, {
-				text: comment,
-				user: userInfo.id,
-				article: contentsList.id
-			})
+			.post(
+				`${process.env.REACT_APP_SERVER_HOST}/board/comment`,
+				{
+					text: comment,
+					user: userInfo.id,
+					article: contentsList.id
+				},
+				{
+					withCredentials: true
+				}
+			)
 			.then(res => {
 				setData(Object.assign({}, data, { comment: '', sign: !sign }))
 				ref.current.focus()
@@ -68,10 +74,16 @@ const comment = ({
 
 	const likeClickHandler = commentId => {
 		axios
-			.post(`${process.env.REACT_APP_SERVER_HOST}/board/like`, {
-				user: userInfo.id,
-				comment: commentId
-			})
+			.post(
+				`${process.env.REACT_APP_SERVER_HOST}/board/like`,
+				{
+					user: userInfo.id,
+					comment: commentId
+				},
+				{
+					withCredentials: true
+				}
+			)
 			.then(res => {
 				setData(Object.assign({}, data, { like: !like }))
 			})

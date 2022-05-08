@@ -37,6 +37,7 @@ class CreateText extends Component {
 					fetch(`${process.env.REACT_APP_SERVER_HOST}/setting/upload`, {
 						method: 'POST',
 						header: { 'content-type': 'multipart/form-data' },
+						credentials: true,
 						body: formData
 					})
 						.then(response => response.json())
@@ -73,7 +74,13 @@ class CreateText extends Component {
 		}
 
 		axios
-			.post(`${process.env.REACT_APP_SERVER_HOST}/board/write`, variables)
+			.post(
+				`${process.env.REACT_APP_SERVER_HOST}/board/write`,
+				variables,
+				{
+					withCredentials: true
+				}
+			)
 			.then(res => {
 				if (res.status === 200) {
 					this.props.history.push(`/board/${res.data.id}`)

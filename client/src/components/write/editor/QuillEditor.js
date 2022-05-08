@@ -135,7 +135,8 @@ class QuillEditor extends React.Component {
 
 			let formData = new FormData()
 			const config = {
-				header: { 'content-type': 'multipart/form-data' }
+				header: { 'content-type': 'multipart/form-data' },
+				withCredentials: true
 			}
 			formData.append('img', file)
 
