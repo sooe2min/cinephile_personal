@@ -56,12 +56,18 @@ const modifyUserInfoPost = async userInfo => {
 	if (Array.isArray(userInfo)) {
 		return await axios.post(
 			`${process.env.REACT_APP_SERVER_HOST}/setting/userinfo`,
-			userInfo[0]
+			userInfo[0],
+			{
+				withCredentials: true
+			}
 		)
 	} else {
 		return await axios.post(
 			`${process.env.REACT_APP_SERVER_HOST}/setting/userinfo`,
-			userInfo
+			userInfo,
+			{
+				withCredentials: true
+			}
 		)
 	}
 }
