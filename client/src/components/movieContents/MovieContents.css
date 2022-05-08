@@ -1,0 +1,234 @@
+.movieInfoMain {
+	/* border: 1px solid blue; */
+	/* min-width: 700px; */
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12% 0;
+	color: white;
+	display: flex;
+	background-color: white;
+}
+.commentTitleIcon {
+	background-color: rgb(198, 197, 197);
+	padding: 0.8em;
+	border-radius: 10px;
+	margin-right: 0.5em;
+	color: #727c7e;
+}
+#movieInfoToggle {
+	width: 3em;
+	position: fixed;
+	top: 40%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* margin-left: 0.5%; */
+	border-radius: 10px;
+	height: 10%;
+	font-size: 15px;
+	font-weight: 300;
+	opacity: 0.7;
+	background-color: rgb(55, 55, 55);
+	color: rgb(255, 255, 255);
+	outline: none;
+
+	cursor: pointer;
+}
+
+.title {
+	font-size: 30px;
+}
+
+.exitMovieInfo {
+	text-align: end;
+	user-select: none;
+	cursor: pointer;
+}
+.runtime {
+	color: rgba(244, 244, 244, 0.879);
+	font-size: 16px;
+	font-weight: 500;
+}
+.story {
+	font-size: 17px;
+	font-weight: 700;
+	margin: 4% 0;
+}
+.otherInfo {
+	margin: 4% 0;
+	font-size: 17px;
+	font-weight: 500;
+	color: rgba(250, 250, 250, 0.571);
+}
+.movieInfoSlide {
+	box-sizing: border-box;
+	/* margin: 0% 0 10% 7%; */
+	width: 90%;
+
+	top: 23%;
+	left: 5%;
+	padding: 3%;
+	height: 75%;
+	box-shadow: 10px 10px 10px rgb(48, 46, 46);
+	position: fixed;
+	display: flex;
+	background-color: rgb(2, 2, 2);
+	border-radius: 10px;
+	border: 1px solid rgb(38, 38, 38);
+}
+
+.movieInfo {
+	width: 100%;
+	/* border: 1px solid rgb(195, 195, 218); */
+	height: 100%;
+	box-sizing: border-box;
+	display: flex;
+	/* padding: 5%; */
+	margin-bottom: 30px;
+	/* height: 300px; */
+}
+
+.poster img {
+	width: 20em;
+	margin-right: 5%;
+	box-shadow: 300px 0px 50px rgba(45, 43, 43, 0.384);
+}
+.movieDetail {
+	border-left: 1px solid rgb(141, 141, 148);
+	padding-left: 3%;
+	margin-left: 5%;
+}
+.userContents {
+	position: relative;
+	left: 13.5%;
+	max-width: 75%;
+}
+.writingHeader {
+	box-sizing: border-box;
+	border-left: 1px solid rgb(228, 228, 228);
+	min-width: 60em;
+	position: relative;
+	/* left: 100%; */
+	padding: 0 3em;
+	/* box-shadow: 13px 5px 10px rgb(69, 66, 66); */
+
+	background-color: rgb(244, 244, 244);
+	/* height: 300px; */
+}
+.userTextTitle {
+	color: rgb(33, 31, 31);
+	font-size: 30px;
+	text-align: center;
+	font-weight: 700;
+	padding: 5%;
+	border-bottom: 1px solid rgb(48, 48, 52);
+}
+#userTextNickname {
+	font-weight: 600;
+}
+.userTextData {
+	position: relative;
+	color: rgb(33, 31, 31);
+	font-size: 15px;
+	bottom: 2.2em;
+	line-height: 30px;
+	font-weight: 400;
+	text-align: end;
+}
+.texts p {
+	color: black;
+}
+
+.texts img {
+	width: 700px;
+	margin-top: 3em;
+	display: block;
+}
+.texts {
+	padding: 5%;
+	height: 40em;
+}
+.user__comment {
+	width: 70%;
+	margin: 4em 3em 3em 0;
+	height: 8em;
+	resize: none;
+	border-radius: 10px;
+	outline: none;
+	padding: 20px;
+}
+.commentForm {
+	/* border: 1px solid blue; */
+	display: flex;
+	/* background-color: rgba(0, 0, 0, 0.598); */
+	justify-content: center;
+	align-items: center;
+	/* max-width: 75%; */
+	/* height: 100px; */
+	/* margin: 70px 0; */
+}
+.commentButton {
+	width: 10%;
+	height: 8em;
+	border-radius: 10px;
+	border: 1px solid rgb(0, 0, 0);
+	background-color: rgb(249, 249, 249);
+	color: rgb(0, 0, 0);
+}
+.comment__box {
+	border-bottom: 1px solid rgb(146, 146, 148);
+	margin: 2% 0 0 4.5%;
+	width: 90%;
+	/* min-height: 140px; */
+	/* max-width: 75%; */
+	padding: 0.7em;
+	height: 10%;
+	background-color: rgb(222, 220, 220);
+
+	border-radius: 10px;
+	box-shadow: 3px -2px 1px rgb(184, 178, 178);
+}
+
+.commentUser {
+	/* border-bottom: 1px solid rgb(188, 188, 196); */
+	/* margin: 10px 0; */
+	/* padding-bottom: 10px; */
+	display: flex;
+	/* align-items: center; */
+	font-size: 17px;
+	font-weight: 700;
+	color: #42aeba;
+}
+.commentText {
+	/* border-bottom: 1px solid rgb(188, 188, 196); */
+	color: rgb(54, 47, 47);
+	font-size: 17px;
+	font-weight: 400;
+	position: relative;
+	display: block;
+	bottom: 1.2em;
+	width: 80%;
+	/* padding: 1em 0; */
+	margin-left: 3em;
+}
+.commentTime {
+	margin-left: 0.5em;
+	color: rgb(82, 78, 78);
+	font-size: 15px;
+	font-weight: 300;
+}
+.likeCount {
+	/* margin-top: 0.5em; */
+	/* width: 4em; */
+	text-align: end;
+	position: relative;
+	bottom: 2em;
+	color: rgb(94, 88, 88);
+}
+
+.likeButton {
+	user-select: none;
+	margin: 0 0.5em;
+	color: rgb(116, 111, 110);
+}
