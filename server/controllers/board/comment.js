@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
 	const { user, text, article } = req.body
 
 	// 토큰을 확인한다.
-	if (token) {
+	if (!token) {
 		try {
 			// 유저를 찾는다.
 			const theUser = await model.user.findOne({

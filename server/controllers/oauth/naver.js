@@ -63,7 +63,7 @@ module.exports = {
 
 	unlink: async (req, res) => {
 		const token = req.cookies.token
-		if (token) {
+		if (!token) {
 			const deleteToken = await axios({
 				method: 'post',
 				url: `https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&access_token=${token}&service_provider=NAVER`,

@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
 	const { token } = req.cookies
 
 	// 토큰을 확인한다.
-	if (token) {
+	if (!token) {
 		try {
 			// 유저, 댓글
 			const { user, comment } = req.body
