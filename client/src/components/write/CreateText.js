@@ -37,7 +37,6 @@ class CreateText extends Component {
 					fetch(`${process.env.REACT_APP_SERVER_HOST}/setting/upload`, {
 						method: 'POST',
 						header: { 'content-type': 'multipart/form-data' },
-						credentials: true,
 						body: formData
 					})
 						.then(response => response.json())
