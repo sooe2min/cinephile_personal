@@ -62,4 +62,4 @@ models/       Sequelize 모델과 관계 정의
 
 데이터베이스 스키마 설계, Express 서버 구성, 사용자·게시판 REST API 구현, 인증과 암호화, 외부 API 연동을 담당했습니다. 프론트엔드 화면 구현은 팀원이 담당했습니다.
 
-📄 [포트폴리오 문서](https://fortune-trader-867.notion.site/3ce24b1bd1d580a69072d69faaa861bb?source=copy_link)
+📄 [포트폴리오 문서](https://fortune-trader-867.notion.site/Cinephile-portfolio-3ce24b1bd1d5806c9acae1ee34386728?source=copy_link)
