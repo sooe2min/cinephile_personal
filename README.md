@@ -1,37 +1,65 @@
-## cinephile_personal
+# Cinephile
 
-팀 프로젝트 이후 개인적인 탐구를 위한 저장소입니다.
+영화 정보를 검색하고 감상을 기록·공유하는 커뮤니티 서비스입니다.
 
-- 기존 서버 저장소: https://github.com/codestates/cinephile_client.git
-- 기존 클라이언트 저장소: https://github.com/codestates/cinephile_server.git
+> 2020.11 — 2020.12 · 4주 · 4인 팀 프로젝트 · **백엔드 담당**
 
-## Cinephile (영화광)
-
-시네필은 영화를 사랑하는 사람들이 모여 소통하는 커뮤니티 서비스입니다.
-
-- 서비스 주소: https://cinephile-personal.netlify.app/
-- 회고: [파이널 프로젝트 회고 (BLAR)](https://smss.netlify.app/2021-01-02-BLAR/)
+`JavaScript` `Node.js` `Express` `Sequelize` `MySQL` `OAuth` `SSL`
 
 ---
 
-#### Server
+## 데이터 모델
 
-- MVC 디자인 패턴을 적용한 Express 기반 Node.js Server 셋업
-- Schema 설계 및 Sequelize ORM을 이용한 MySQL 데이터베이스 연결
-- SSL 인증서로 데이터를 암호화하여 보안 강화
-- WebSocket을 서버에 연결하여 실시간 채팅 기능 구현
-- Heroku 배포
+화면보다 데이터 구조를 먼저 정의한 뒤 서버를 구성했습니다.
 
-#### Authentication
 
-- OAuth 기반 소셜 로그인 인증
-- MemoryStore 세션 저장소 기반 일반 로그인 인증
-- Crypto를 이용한 비밀번호 암호화
 
-#### HTTP API
+| 엔티티 | 역할 | 관계 |
+|---|---|---|
+| `User` | 계정·프로필 | 게시글·댓글의 작성자 |
+| `Movie` | 외부 API로 수집한 영화 정보 | 게시글이 참조하는 대상 |
+| `Post` | 감상 기록 | `User` · `Movie` 참조 |
+| `Comment` | 게시글의 댓글 | `User` · `Post` 참조 |
 
-- 사용자 관련 API 개발
-- 게시판 관련 API 개발
-- 네이버 오픈 API를 활용한 영화 검색 로직 구현
-- cheerio를 이용한 영화 데이터 크롤링 로직 구현
-- Multer S3 & AWS SDK를 이용한 이미지 파일 업로드 로직 구현
+Sequelize ORM으로 모델과 관계를 정의하고 MySQL에 연결했습니다.
+
+<!-- 이미지: ERD -->
+
+---
+
+## 서버 구조
+
+Express 서버를 MVC 패턴으로 분리했습니다.
+
+```
+routes/       요청 경로 정의
+controllers/  요청 처리와 응답
+models/       Sequelize 모델과 관계 정의
+```
+
+---
+
+## API
+
+| 영역 | 엔드포인트 |
+|---|---|
+| **사용자** | 회원가입 · 로그인 · 로그아웃 · 프로필 조회/수정 |
+| **게시판** | 게시글·댓글 생성 · 조회 · 수정 · 삭제 |
+| **영화 검색** | 네이버 오픈 API 연동 및 응답 가공 |
+
+---
+
+## 인증과 보안
+
+- OAuth 소셜 로그인
+- 세션 기반 일반 로그인
+- Node.js `crypto` 기반 비밀번호 암호화
+- SSL 인증서 적용
+
+---
+
+## 담당 범위
+
+데이터베이스 스키마 설계, Express 서버 구성, 사용자·게시판 REST API 구현, 인증과 암호화, 외부 API 연동을 담당했습니다. 프론트엔드 화면 구현은 팀원이 담당했습니다.
+
+📄 [포트폴리오 문서](https://fortune-trader-867.notion.site/3ce24b1bd1d580a69072d69faaa861bb?source=copy_link)
